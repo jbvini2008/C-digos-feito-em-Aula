@@ -278,5 +278,5 @@ try {
 ````
 OBS. para funcionar, precisamos ter a conexão feita no Tela. OBS2. Neste insert temos uma informação que foi digitada pelo usuário, no caso foi o modelo do veículo. Tal informação foi digitada em um Campo de Texto com o nome "txtModelo".
 
-# 7. na tela de Seleção podemos colocar o seguinte código
+# 7. Na tela de Seleção podemos colocar o seguinte código
 Este manual fornece uma introdução ao uso do SQL com Java e PostgreSQL.
