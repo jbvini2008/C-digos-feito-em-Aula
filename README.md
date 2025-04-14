@@ -223,6 +223,7 @@ Clicar com o botao direito no projeto, clicar em Propriedades, clicar no Run, ir
 # 4. Iniciar o Banco com Start PostgreSQL.
 Para se conectar no abnco vamos colocar o codigo no JFRame principal:
 Nosso JFrame vai ficar com esse metodo "conecta()".
+OBS. a primeira linha não deve ser copiada, serve apenas para você se localizar.
 
 ````java
 public class Tela extends javax.swing.JFrame {
@@ -245,6 +246,35 @@ public class Tela extends javax.swing.JFrame {
     }
 
 ````
+O método "conecta()" é executado tanto quando o progama é aberto quanto quando clicamos no botão de status da conexão.
 
+# 5. Criar os JInternalFrame e fazer as opções de menu para chamar eles, com o seguinte comando:
+    TelaInsert i;
+    i = new TelaInsert();
+    jDesktopPane2.add(i);
+    i.setVisible(true);
 
+O comando acima supoe que temos um JInternalFrame com o nome TelaInsert. Precisamos também tem em nosso JFrame um JDesktopPane, no caso nosso JDesktopPane, é o jDesktopPane2.
+
+# 6. na tela do insert supondo que temos campos para serem preenchidos.
+Podemos colocar o seguinte código no botão insert.
+````
+try {
+    String comando;
+    comando = "INSERT into veiculos "
+            + "(modelo) VALUES "
+            + "(?)";
+    PreparedStatement pstmt;
+    pstmt = Tela.conexao.prepareStatement(comando);
+    pstmt.setString(1, txtModelo.getText());
+    pstmt.executeUpdate();
+    JOptionPane.showMessageDialog(this, "Inserido com Sucesso");
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Erro na inserção "+e.getMessage());
+}
+
+````
+OBS. para funcionar, precisamos ter a conexão feita no Tela. OBS2. Neste insert temos uma informação que foi digitada pelo usuário, no caso foi o modelo do veículo. Tal informação foi digitada em um Campo de Texto com o nome "txtModelo".
+
+# 7. na tela de Seleção podemos colocar o seguinte código
 Este manual fornece uma introdução ao uso do SQL com Java e PostgreSQL.
