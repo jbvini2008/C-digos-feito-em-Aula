@@ -249,7 +249,7 @@ public class Tela extends javax.swing.JFrame {
 O método "conecta()" é executado tanto quando o progama é aberto quanto quando clicamos no botão de status da conexão.
 
 # 5. Criar os JInternalFrame e fazer as opções de menu para chamar eles, com o seguinte comando:
-````
+````java(JFrame Principal)
     TelaInsert i;
     i = new TelaInsert();
     jDesktopPane2.add(i);
@@ -259,7 +259,8 @@ O comando acima supoe que temos um JInternalFrame com o nome TelaInsert. Precisa
 
 # 6. na tela do insert supondo que temos campos para serem preenchidos.
 Podemos colocar o seguinte código no botão insert.
-````
+
+````JInternal Frame
 try {
     String comando;
     comando = "INSERT into veiculos "
