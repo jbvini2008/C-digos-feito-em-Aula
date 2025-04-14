@@ -200,8 +200,8 @@ public class TabelaUsuarios {
 ---
 
 ## Passo a Passo para criar um Projeto no NetBeans com acesso ao PostgreSQL
-# 1 Criar um Projeto Maven
-# 2 Editar o Arquivo pom.xml
+# 1. Criar um Projeto Maven
+# 2. Editar o Arquivo pom.xml
 Criar a tag
 ```
 <dependencies>
