@@ -199,4 +199,52 @@ public class TabelaUsuarios {
 
 ---
 
+## Passo a Passo para criar um Projeto no NetBeans com acesso ao PostgreSQL
+# 1 Criar um Projeto Maven
+# 2 Editar o Arquivo pom.xml
+Criar a tag
+```
+<dependencies>
+````
+e adicionar a dependencia do banco de dados PostgreSQL
+````xml
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.5</version>
+        </dependency>
+    </dependencies>
+````
+# 3. Criar um JFrame, apagar a classe com o main e configurar o JFrame como Classe Principal.
+Clicar com o botao direito no projeto, clicar em Propriedades, clicar no Run, ir em main class, clicar em browse... e selecionar o JFrame criado.
+
+# 4. Iniciar o Banco com Start PostgreSQL.
+Para se conectar no abnco vamos colocar o codigo no JFRame principal:
+Nosso JFrame vai ficar com esse metodo "conecta()".
+
+````java
+public class Tela extends javax.swing.JFrame {
+    public static Connection conexao;
+    
+    public void conecta(){
+         try {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost:5432/postgres";
+            String user = "seu usuario";
+            String pass = "sua senha";
+            conexao = DriverManager.getConnection(url, user, pass);
+            botaoConecta.setBackground(Color.green);
+            labelConecta.setText("Conectado");
+        } catch (Exception e) {
+            botaoConecta.setBackground(Color.red);
+            labelConecta.setText("Desconectado");
+        }
+   
+    }
+
+````
+
+
 Este manual fornece uma introdução ao uso do SQL com Java e PostgreSQL.
