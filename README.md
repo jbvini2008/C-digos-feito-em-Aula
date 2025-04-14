@@ -199,4 +199,4 @@ public class TabelaUsuarios {
 
 ---
 
-Este manual fornece uma introdução ao uso do SQL com Java e PostgreSQL. Com ele, você pode criar, manipular e visualizar dados de forma eficiente.
+Este manual fornece uma introdução ao uso do SQL com Java e PostgreSQL.
